@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:400,500,600&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		:root {
+			--color-primary: #FFCE40;
+			--color-primary-light: #FFF24C;
+			--color-dark: #5f580f;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		html {
+			font-size: 62.5%;
+		}
+
+		@media (min-width: 1800px) {
+			html{
+				font-size: 100%;
+			}
+		}
+
+		@media (max-width: 1200px) {
+			html{
+				font-size: 56.25%;
+			}
+		}
+
+		@media (max-width: 1056px) {
+			html{
+				font-size: 50%;
+			}
+		}
+
+		@media (max-width: 956px) {
+			html{
+				font-size: 43.75%;
+			}
+		}
+		body {
+			background-image: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary) );
+			min-height: 100vh;
+			font-family: 'Baloo Chettan 2', cursive;
+		}
+		.section-form {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		@media (max-width: 786px) {
+			.section-form {
+				position: static;
+				transform: none;
+				display: block;
+				width: 100%;
+			}
+		}
+		.row {
+			/*width: 124rem;*/
+			width: 114rem;
+		}
+		@media (max-width: 956px) {
+			.row {
+				width: 110rem;
+			}
+		}
+
+		@media (max-width: 786px) {
+			.row {
+				width: 100%;
+				display: block;
+			}
+		}
+		.row::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		.col-1-of-2 {
+			width: calc(50% - 5rem);
+			float: left;
+		}
+		.col-1-of-2:not(:last-child) {
+			margin-right: 5rem;
+		}
+		@media (max-width: 1000px) {
+			.col-1-of-2 {
+				width: 48%;
+			}
+			.col-1-of-2:not(:last-child) {
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: 786px) {
+			.col-1-of-2 {
+				width: 100%;
+				/*float: none;*/
+			}
+		}
+		.form {
+			width: 100%;
+			padding: 15rem 10rem;
+			background-color: #fff;
+			border-radius: 16rem 2rem 2rem 16rem;
+		}
+		.form__group {
+			width: 80%;
+			margin: 0 auto;
+		}
+		.form__group:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+		.form__label {
+			display: block;
+			font-size: 2.2rem;
+			margin-bottom: 0.5rem;
+		}
+		.form__input{
+			display: block;
+			width: 95%;
+			margin: 0 auto;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			padding: .5rem 2rem;
+			border-radius: 3px;
+		}
+		.form__submit {
+			width: 90%;
+			background-color: orange;
+			display: block;
+			margin: 0 auto;
+			border: none;
+			padding: 1rem 4rem;
+			border-radius: 20rem;
+			color: #fff;
+			font-weight: 500;
+			font-size: 1.6rem;
+			transition: 0.2s all;
+			outline: none;
+		}
+		.form__submit:hover {
+			box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+			background-color: var(--color-primary);
+		}
+
+		@media (max-width: 786px) {
+			.form {
+				width: 95%;
+				margin: 0 auto;
+				border-radius: 3rem;
+			}
+		}
+
+		.content-login {
+			padding: 8rem 2rem;
+		}
+		.heading-secondary {
+			color: #222;
+			font-size: 3.4rem;
+			text-transform: capitalize;
+			margin-bottom: 6rem;
+		}
+		.signup {
+			margin-top: 1rem;
+		}
+		.signup__text {
+			font-size: 1.8rem;
+			display: block;
+			font-size: 1.5rem;
+		}
+
+		@media (max-width: 786px) {
+			.content-login {
+				padding: 2rem;
+			}
+			.signup__text {
+				display: none;
+			}
+			.heading-secondary {
+				text-align: center;
+			}
+		}
+
+		.signup__btn {
+			display: inline-block;
+			color: #fff;
+			border: none;
+			margin-left: 1rem;
+			font-size: 3rem;
+			text-decoration: none;
+			color: rgba(0, 0, 0, 0.8);
+			transition: 0.2s all;
+		}
+		.signup__btn:hover {
+			transform: translateY(-3px);
+		}
+		.content-login__icon {
+			width: 10rem;
+			height: 10rem;
+			display: block;
+			margin: 2rem auto;
+			background-color: #fff;
+			clip-path: polygon(0 0, 50% 50%, 100% 0, 50% 100%);
+			animation: yMove 0.6s linear infinite alternate;
+		}
+		@keyframes yMove {
+			from { transform: translateY(-30px); }
+			to { transform: translateY(10px); }
+		}
+		.d-tab {
+			display: none;
+			margin-top: 2rem;
+			padding: 0 2rem;
+		}
+		@media (max-width: 786px) {
+			.d-tab {
+				display: block;
+				margin-bottom: 2rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="section-form">
+		<div class="row">
+			<div class="col-1-of-2">
+				<div class="content-login">
+					<span class="content-login__icon"></span>
+					<h2 class="heading-secondary">We Connent billions of people</h2>
+					<div class="signup">
+						<span class="signup__text">
+							if don't have a account.... <a href="#" class="signup__btn">Signup Here!</a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-1-of-2">
+				<form action="#" class="form">
+					<div class="form__group">
+						<label for="name" class="form__label">Username</label>
+						<input type="text" class="form__input" id="name">
+					</div>
+
+					<div class="form__group">
+						<label for="pass" class="form__label">Password</label>
+						<input type="password" class="form__input" id="pass">
+					</div>
+
+					<div class="form__group">
+						<input type="submit" class="form__submit">
+					</div>
+				</form>
+				<span class="signup__text d-tab">
+					if don't have a account.... <a href="#" class="signup__btn">Signup Here!</a>
+				</span>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
